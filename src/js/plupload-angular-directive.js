@@ -112,14 +112,14 @@ angular.module('plupload.module', [])
 
 								if(scope.allUploaded) {
 									var fn = $parse(iAttrs.onFileUploaded);
-									fn(scope.$parent, {$response:res});
+									fn(scope.$parent, {$response:res, $file:file});
 								}
 
 					 		});
 						} else {
 							var fn = $parse(iAttrs.onFileUploaded);
 							scope.$apply(function(){
-								fn(scope.$parent, {$response:res});
+								fn(scope.$parent, {$response:res, $file:file});
 							});
 						}
 						//scope.$parent.$apply(iAttrs.onFileUploaded);
